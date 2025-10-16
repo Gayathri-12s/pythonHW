@@ -6,18 +6,18 @@ The Python course covers core programming concepts such as variables, loops, fun
 Students practice through real-world exercises and projects, gaining the skills to create basic programs and automation scripts useful for software, data, and web development careers.'''
 
 
-#print(len(multiline))
+print(len(multiline))
 
-#print(multiline[0:51])
+print(multiline[0:51])
 
-#print(multiline.replace("Python", "PYTHON"))
+print(multiline.replace("Python", "PYTHON"))
 
-#print(multiline.lower())
+print(multiline.lower())
 
 multiline_split = multiline.split()
-#print(multiline_split)
+print(multiline_split)
 
-#a = "course" in  multiline
-#print(a)
+a = "course" in  multiline
+print(a)
 
 print("The course description is {} characters long and has {} words" .format(len(multiline), len(multiline_split)))
