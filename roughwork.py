@@ -117,3 +117,37 @@ print(a.count(1))
 # count() -- returns the total count of occureneces of element 
 
 
+# ❗❗❗DICTIONARY IN PYTHON❗❗❗
+
+# Used to store data in key-value pairs
+
+info = {
+    'key': 'value',
+     'name': 'John',
+      'age': 24,
+      'subjects': ['Maths', 'Physics', 'Chemistry'],
+      'topics': ("dictionary", 'set'),
+      18 : 'eighteen',
+      9.48: 'nine point four eight'
+}
+print(type(info))
+
+# dictionaries are mutable
+# they are unordered (no index)
+# don't allow duplicate keys
+
+
+# to print individual values, use the keys
+
+print(info['name'])
+
+info['name'] = 'gayathri'
+print(info)
+
+# can add new key-value pairs
+
+info['grade'] = 'A'  
+print(info)
+
+
+
