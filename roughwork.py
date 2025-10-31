@@ -152,11 +152,305 @@
 
 # ❗❗❗CONDITIONAL STATEMENTS❗❗❗
 
-age = 21
 
-if age >= 18:
-    print("You are eligible to vote.")
-    print("can drive")
+# age = 21
+
+# if age >= 18:
+#     print("You are eligible to vote.")
+#     print("can drive")
     
+#                        ✏️IF ELSE STATEMENT✏️
+# age=24
+# if(age>18):
+#     print("You are eligible to vote.")
+# else:
+#     print("You are not eligible to vote.")
+
+
+
+#                           ✏️ELIF STATEMENT✏️
+
+# light= 'green'
+# if light == 'red':
+#     print("Stop")
+# elif light == 'yellow':
+#     print("Get Ready")
+# elif light == 'green':
+#     print("Go")
     
+# print("End of the program")
+
+#                       ✏️ELIF else statement✏️
+
+# light= 'pink'
+# if light == 'red':
+#     print("Stop")
+# elif light == 'yellow':
+#     print("Get Ready")
+# elif light == 'green':
+#     print("Go")
+      
+# else:
+#     print("Invalid color")  #indentatation (proper spacing instead of curly braces)
+    
+# print("End of the program")
+
+
+# marks = 85 
+# marks = int(input("enter your marks: ")) # getting input from the user 
+
+# if(marks>=90):
+#     grade='A'
+    
+# elif(marks>=80 and marks<90):
+#     grade='B'
+    
+# elif(marks>=70 and marks<80):
+#     grade='C'
+# else:
+#     grade='D'
+# print("Your grade is:", grade)
+
+#                   ✏️NESTED IF-ELSE✏️
+
+# age = 10
+# if (age>=18):
+#     if(age>=65):
+#         print("cannot drive ")
+#     else:
+#          print("can drive") 
+# else:
+#     print("cannot drive")
+
+
+#    ❗❗❗LOOPS❗❗❗
+
+# loops are used to repeat instructions .
+
+#                   ✏️while loops✏️
+
+
+
+
+
+
+
+
+
+
+
+#   ❗❗❗OOPS IN PYTHON❗❗❗
+
+
+# TO MAP REAL WORLD SCENARIOS WE STARTED USING OBJECTS IN CODE .
+# THIS IS CALLED OBJECT ORIENTED PROGRAMMING .
+
+#         ✏️CLASSES AND OBJECTS✏️
+
+# CLASS IS A BLUEPRINT FOR CREATING OBJECTS .
+
+
+# creating a class 
+# class student:
+#     name = 'John'
+   
+# creating an object (instance of class)
+# s1= student()
+# print(s1.name)
+
+
+#        ✏️ Class and Instance Attributes✏️
+
+
+# class student:
+#     college = "ABC College"   # class attribute (same for all objects take only one memory location)
+#     def __init__(self, name, marks):
+#         self.name = name   # instance attribute different for every object 
+#         self.marks = marks     # instance attribute
+# s1 = student("John", 95)
+
+# s2 = student("Jane", 88)
+
+# print(s1.college)
+# print(s2.college)
+# # also
+# print(student.college)  # accessing class attribute using class name
+
+
+
+#              ✏️--INIT-- FUNCTION✏️  (short for 'initialize')
+
+# CONSTRUCTORS IN PYTHON  
+# (ALL CLASSES HAVE A FUNCTION CALLED __INIT__(), WHICH IS ALWAYS EXECUTED WHEN THE OBJECT IS BEING INITIATED .)
+
+# class student:
+#     name = 'John'
+#     def __init__(self):  # self kodthillel error varum 
+#         print("adding new student in database")
+#         print(self)
+# s1 = student()   #--this will automatically call the (constructor or init.)
+# print(s1)    #s1= student() and self  both are same  
+    #   objects points to self (parameter)
+    
+    # we should always pass an argument to the constuctor.
+    
+                                            
+    
+# class student:   #self will always be the first parameter.
+    # def __init__(self, fullname):
+    #     self.name = fullname
+        # inside name variable(called as attribute) we store the value of fullname parameter.
+# s1= student("john")
+# print(s1.name)
+
+# default constructors
+# class student:
+#     def __init__(self):  #only one parameter .
+        
+# parameterised constructors
+# class student:
+#     def __init__(self, name, age): # there are other parameters other than self.
+
+
+# class student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#     def welcome(self):
+#         print("Welcome", self.name) 
+#     def get_marks(self):
+#         return self.marks
+# s1 = student("John", 24)
+# s1.welcome()
+# print(s1.get_marks()) # calling method using object
+
+# ✏️Static Method✏️
+
+# METHODS THAT DON'T USE THE SELF PARAMETER (work at class level)
+# @staticmethod  (called as decorator)
+
+
+# class student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#     def welcome(self):
+#         print("Welcome", self.name) 
+#      @staticmethod 
+#     def hello():
+#         print("Hello Students")
+    
+#     def get_marks(self):
+#         return self.marks
+# s1 = student("John", 24)
+# s1.welcome()
+# s1.hello()
+# print(s1.get_marks())
+
+
+# Abstraction✏️
+
+#  Hiding the implementation details of a class and only showing the essential features to the user.
+
+# Encapsulation✏️
+
+# Wrapping data and functions into a single unit (object). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ✏️INHERITANCE✏️
+
+# WHEN ONE CLASS (Child/Derived) DERIVES THE PROPERTIES AND METHODS OF ANOTHER CLASS (Parent/Base). here properties and methods mean attributes .
+
+# class car:
+#     @staticmethod
+#     def start():
+#         print("car started")
+        
+#     def stop():
+#         print("car stopped")
+        
+# class electriccar(car):  # electriccar is inheriting the properties of car class
+#     def __init__(self, name):
+#         self.name = name
+
+# car1 = electriccar("Tesla") 
+# car2 = electriccar("Nissan")
+    #  multi-level inheritance
+# print(car1.start())  #start() method inherited from car class
+# print(car2.name)
+
+
+# multiple inheritance
+
+class A:
+    varA = "welcome to class A"
+    
+class B:
+    varB = "welcome to class B"
+    
+class C(A, B):
+    varC = "welcome to class C"
+    
+c1= C()
+print(c1.varA)
+print(c1.varB)
+
+# ✏️Super Method✏️
+
+# super() method is used to access the methods of parent class
+
+class Car:
+    def __init__(self, type):
+        self.type = type  #parent class attribute
+    @staticmethod   
+    def start():
+        print("car started")
+    @staticmethod  
+    def stop():
+        print("car stopped")
+        
+class Toyota(Car):
+    def __init__(self, name, type):
+        self.name = name
+        # self.type = type  # i need type from parent class 
+        super().__init__(type)  # calling parent class constructor
+           #  now no error will come .
+        super().start()  # calling parent class method
+car1 = Toyota("Innova", 'SUV')
+print(car1.type)  #error because type is not defined in Toyota class  
+
+#          ✏️POLYMORPHISM✏️
+
+# WHEN THE SAME FUNCTION IS ALLOWED TO HAVE DIFFERENT MEANING ACCORING TO THE CONTEXT.
+
+
+print(1+2) #3
+print("gayathri"+"sunil") #gayathrisunil
+print([1,2,3]+[4,5,6]) #merge        # overloading  + pala meaning akm.
+
+
 
