@@ -404,53 +404,626 @@
 # print(car2.name)
 
 
+# good example 1
+
+# class Human:
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sing(self):
+#         print("I can sing ")
+        
+# male_1 = Male()
+# male_1.eat()
+
+
+# # example 2
+
+# class Human:
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):   #shows overriding 
+#         print("I can code ")  
+        
+# male_1 = Male()
+# male_1.eat()
+# male_1.work()  # i can code   but if ypu give super 
+# # =====================================================
+
+# class Human:
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  #calls work from parent class
+#         print("I can code ")
+        
+# male_1 = Male()
+# male_1.eat()
+# male_1.work() # i can work also shows 
+# # =======================================================
+
+# class Human:
+#     def __init__(self):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  
+#         print("I can code ")
+        
+        
+# male_1 = Male()
+# male_1.eat()
+# male_1.work()
+# print(male_1.num_eyes) # it can print 2 since it inherits from parent class
+
+# # but when a constructor is given to the child class then it cant 
+
+# class Human:
+#     def __init__(self):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def __init__(self, name):
+#         self.name = name 
+   
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  
+#         print("I can code ")
+        
+        
+# male_1 = Male() # shows error since no argument is passed 
+# male_1.eat()
+# male_1.work()
+# print(male_1.num_eyes) # it can print 2 since it inherits from parent class
+
+# ===============================================
+# class Human:
+#     def __init__(self):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def __init__(self, name):
+#         self.name = name 
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  
+#         print("I can code ")
+        
+        
+# male_1 = Male("John")
+# male_1.eat()
+# male_1.work()
+# print(male_1.num_eyes) # shows error 
+# =============================================
+
+# class Human:
+#     def __init__(self):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def __init__(self, name):
+#         super().__init__() #now can get num_eyes from base class 
+#         self.name = name 
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  
+#         print("I can code ")
+        
+        
+# male_1 = Male("John")
+# male_1.eat()
+# male_1.work()
+# print(male_1.num_eyes) #to access this we need to give super function .
+# =========================================================
+
+# class Human:
+#     def __init__(self, num_heart):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#         self.num_heart = num_heart
+#     def eat(self):
+#         print("I can eat")
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def __init__(self, name, heart): #can also give num_heart too parameter name doesnt matter.
+#         super().__init__(heart) 
+#         self.name = name 
+#     def sing(self):
+#         print("I can sing ")
+        
+#     def work(self):
+#         super().work()  
+#         print("I can code ")
+        
+        
+# male_1 = Male("John", 1)
+# male_1.eat()
+# male_1.work()
+# print(male_1.num_eyes)
+# print(male_1.num_heart) # num_heart thanne vilikanm
+
+# ==================================================
+
 # multiple inheritance
 
-class A:
-    varA = "welcome to class A"
+# class Human:
+#     def eat(self):
+#         print("i can eat")
+#     def work(self):
+#         print(" i can work")
+# class Male:
+#     def sing(self):
+#         print("i can sing")
+#     def work(self):
+#         print(" i can code")
     
-class B:
-    varB = "welcome to class B"
+# class boy(Human, Male):  # (Male, Human) this will give me ---i can code as output
+#     pass
+        
+# boy_1 = boy()
+# boy_1.sing()
+# boy_1.work() # i can work this points to human class
+# Male.work(boy_1) 
+# ============================================================
+
+# class Human:
     
-class C(A, B):
-    varC = "welcome to class C"
+#     def eat(self):
+#         print("i can eat")
+#     def work(self):
+#         print(" i can work")
+# class Male:
+#     def sing(self):
+#         print("i can sing")
+#     def work(self):
+#         print(" i can code")
     
-c1= C()
-print(c1.varA)
-print(c1.varB)
+# class boy(Human, Male):
+#     pass
+        
+# boy_1 = boy()
+# boy_1.sing()
+# # boy_1.work() 
+# Male.work(boy_1) # can access by giving calling class name with method name and object as argument since no obj for male class.
+
+# =============================================================================
+
+# class Human:
+  
+#     def eat(self):
+#         print("i can eat")
+#     def work(self):
+#         print(" i can work")
+# class Male:
+    
+#     def sing(self):
+#         print("i can sing")
+#     def work(self):
+#         print(" i can code")
+    
+# class boy(Human, Male):
+#     def sleep(self):
+#         print("i can sleep")
+#     def work(self):
+#         print("i can test")
+        
+# boy_1 = boy()
+# # boy_1.sing()
+# boy_1.work() # gives i can test
+# # Male.work(boy_1)
+# print(boy.mro())  #  mro (method resoltution order) [<class '__main__.boy'>, <class '__main__.Human'>, <class '__main__.Male'>, <class 'object'>]
+# =====================================================================================
+
+# class Human:
+#     def __init__(self):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+    
+#     def eat(self):
+#         print("i can eat")
+#     def work(self):
+#         print(" i can work")
+# class Male:
+#     def __init__(self, name):
+#         self.name = name 
+#     def sing(self):
+#         print("i can sing")
+#     def work(self):
+#         print(" i can code")
+    
+# class boy(Human, Male):
+#     def sleep(self):
+#         print("i can sleep")
+#     def work(self):
+#         print("i can test")
+        
+# boy_1 = boy()
+# print(boy_1.num_nose)
+# print(boy_1.name) #shows error because acc to mro it will check class boy there no inint fun so goes to human but there no name argument so shows error.
+# ===========================================================================================
+
+
+# class Human:
+#     def __init__(self, num_heart):
+#         self.num_eyes = 2
+#         self.num_nose = 1
+#         self.num_heart = num_heart
+    
+#     def eat(self):
+#         print("i can eat")
+#     def work(self):
+#         print(" i can work")
+# class Male:
+#     def __init__(self, name):
+#         self.name = name 
+#     def sing(self):
+#         print("i can sing")
+#     def work(self):
+#         print(" i can code")
+    
+# class boy(Human, Male):
+#     def __init__(self, name, heart, language):
+#         self.language = language 
+#         Human.__init__(self, heart)
+#         Male.__init__(self, name)
+        
+#     def sleep(self):
+#         print("i can sleep")
+#     def work(self):
+#         print("i can test")
+        
+#     def display(self):
+#         print(f" Hi I am {self.name} and I work on {self.language}")
+        
+# boy_1 = boy("john", 1, 'python')
+# # print(boy_1.num_nose)
+# # print(boy_1.name)
+# # print(boy_1.num_heart)
+# # print(boy_1.language)
+# boy_1.display()
+
+# =============================================================================
+
+# MULTILEVEL INHERITANCE
+
+# class Human:
+#     def eat(self):
+#         print("I can eat")
+        
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sleep(self):
+#         print("I can sleep")
+
+# class Boy(Male):
+#     def work(self):
+#         print("I can code")
+
+# boy_1 = Boy()
+# boy_1.eat() # i can eat.
+# boy_1.work()  # i can code from class boy (mro).
+
+# if you want to access the other work then
+# =======================================================================
+
+# class Human:
+#     def eat(self):
+#         print("I can eat")
+        
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def sleep(self):
+#         print("I can sleep")
+
+# class Boy(Male):
+#     def work(self):
+#         # Human.work(self)
+#         super().work()
+#         print("I can code")
+
+# class programmer(Boy):
+#     def work(self):
+#         super().work()
+#         print("i can write programm")
+        
+# boy_1 = Boy()
+# prog_1= programmer()
+# boy_1.eat() 
+# boy_1.work() 
+# prog_1.work()
+
+# ===============================================================================
+
+# class Human:  
+#     can_breath= True #  class variable. can be accessed without init constr.
+#     def __init__(self, num_heart):
+#         self.num_eyes = 2
+#         self.num_heart = num_heart
+#         print("calling init from human class")
+        
+#     def eat(self):
+#         print("I can eat")
+        
+#     def work(self):
+#         print("I can work")
+        
+# class Male(Human):
+#     def __init__(self, name):
+#         self.name = name
+        
+#     def sleep(self):
+#         print("I can sleep")
+
+# class Boy(Male):
+#     def __init__(self, heart, name, dance):
+#         self.can_dance = dance
+#         Human.__init__(self, heart)
+#         Male.__init__(self, name)
+        
+#     def work(self):
+#         super().work()
+#         print("I can code")
+
+
+        
+# boy_1 = Boy(1, 'rahul', 'kathak')
+# print(boy_1.num_eyes)
+# print(boy_1.num_heart)
+# print(boy_1.can_dance)
+# print(boy_1.can_breath)
+# print(Boy.mro())
+
+
+
+
+
+# multiple inheritance
+
+# class A:
+#     varA = "welcome to class A"
+    
+# class B:
+#     varB = "welcome to class B"
+    
+# class C(A, B):
+#     varC = "welcome to class C"
+    
+# c1= C()
+# print(c1.varA)
+# print(c1.varB)
 
 # ✏️Super Method✏️
 
 # super() method is used to access the methods of parent class
 
-class Car:
-    def __init__(self, type):
-        self.type = type  #parent class attribute
-    @staticmethod   
-    def start():
-        print("car started")
-    @staticmethod  
-    def stop():
-        print("car stopped")
+# class Car:
+#     def __init__(self, type):
+#         self.type = type  #parent class attribute
+#     @staticmethod   
+#     def start():
+#         print("car started")
+#     @staticmethod  
+#     def stop():
+#         print("car stopped")
         
-class Toyota(Car):
-    def __init__(self, name, type):
-        self.name = name
-        # self.type = type  # i need type from parent class 
-        super().__init__(type)  # calling parent class constructor
-           #  now no error will come .
-        super().start()  # calling parent class method
-car1 = Toyota("Innova", 'SUV')
-print(car1.type)  #error because type is not defined in Toyota class  
+# class Toyota(Car):
+#     def __init__(self, name, type):
+#         self.name = name
+#         # self.type = type  # i need type from parent class 
+#         super().__init__(type)  # calling parent class constructor
+#            #  now no error will come .
+#         super().start()  # calling parent class method
+# car1 = Toyota("Innova", 'SUV')
+# print(car1.type)  #error because type is not defined in Toyota class  
 
-#          ✏️POLYMORPHISM✏️
+# #          ✏️POLYMORPHISM✏️
 
-# WHEN THE SAME FUNCTION IS ALLOWED TO HAVE DIFFERENT MEANING ACCORING TO THE CONTEXT.
+# # WHEN THE SAME FUNCTION IS ALLOWED TO HAVE DIFFERENT MEANING ACCORING TO THE CONTEXT.
 
 
-print(1+2) #3
-print("gayathri"+"sunil") #gayathrisunil
-print([1,2,3]+[4,5,6]) #merge        # overloading  + pala meaning akm.
+# print(1+2) #3
+# print("gayathri"+"sunil") #gayathrisunil
+# print([1,2,3]+[4,5,6]) #merge        # overloading  + pala meaning akm.
+
+
+# =====================================================================================================
+
+            #   ✏️MODULES✏️
+
+# improve code reusability, reduce time , maintain the project , more redable
+
+# types of module: 1. built in 
+#                  2. create your own
+
+# print(help ("modules")) #to check the modules.
+# if you want to import any module just write import and name of the module.
+
+# import math
+# print(math.e)
+
+# creating your on module
+
+# ✏️ABSTRACTION✏️
+
+# generalizing something to hide the complex part. 
+
+# ABSTRACT CLASSES AND ABSTRACT METHODS
+
+
+# class Vehicle:  #general class and blueprint for other classes 
+#     def __init__(self, n):
+#         self.no_of_tyres = n
+#     def start(self):
+#         pass 
+
+# class Bike:
+#     def __init__(self):
+#         self.no_of_tyres = 2
+#     def start(self):
+#         print("start with kick") 
+        
+# class Scooty:
+#     def __init__(self):
+#         self.no_of_tyres = 2
+#     def start(self):
+#         print("self start")
+        
+# class Car:
+#     def __init__(self):
+#         self.no_of_tyres = 4
+#     def start(self):
+#         print("start with key")
+# v = Vehicle()# in this object we dont know what no of tyres to pass as well as the method is empty so we want to restrict any one from making this class an object then we give abstract to it.   object should be like actual thing like bike 
+# ==========================================================================================
+ 
+ 
+# from abc import ABC , abstractmethod
+ 
+# class Vehicle(ABC):
+    
+#     def __init__(self, n):
+#         self.no_of_tyres = n
+#     @abstractmethod   #   without this it will show error ( decorator )  
+#     def start(self):  # this method is not considered abstract method , we need to make it abstract by providing  → abstractmethod (decorator)
+#         pass 
+
+# class Bike(Vehicle):
+#     def __init__(self, n , color):
+#         super().__init__(n)
+#         self.color = color
+#     def start(self):
+#         print("start with kick") 
+        
+# class Scooty(Vehicle):
+#     def __init__(self, n):
+#         self.no_of_tyres = n
+#     def start(self):
+#         print("self start")
+        
+# class Car(Vehicle):
+#     def __init__(self, n, gear):
+#         self.no_of_gear = gear
+        
+#     def start(self):
+#         print("start with key")
+
+
+# bike =  Bike(2, "black")
+# print(bike.color)
+# bike.start()
+# ====================================================================================================
+
+# ✏️Acess Specific in Python✏️
+
+
+# 1. public   (attributes and method can be used outside)
+# 2. protected (not everyone can use )
+# 3. private (not for everyone except you)
+
+# class student:     # by default this is public.
+#     def __init__(self, name):
+#         self.name=name
+        
+#     def display(self):
+#         print(f"hi myself {self.name} from student class")
+        
+# s1 = student("rahul")
+# print(s1.name)
+# s1.display()        
+# # ============================================================================
+
+# class student:
+#     def __init__(self, name, rollno, age):  #parameter kodkilla '_' .
+#         self.name=name  # public.
+#         self._rollno = rollno #protected attribute.
+#         self.__age = age
+#     def __display(self):
+#         print(f"hi myself {self.name} from student class")
+
+# class branch(student):
+#     pass 
+# s1 = student("rahul", 23, 14)   
+# # b1 = branch("nisha", 22, )
+# # print(b1.name )
+# # print(b1._rollno)
+# s1.__display()
+# print(s1.__age)    #its private cannot access it outside the class.
+# s1 = student("rahul")
+# print(s1.name)
+#    
+
+
+
+
+#     ❗ENCAPSULATION❗ 
+
+
+# wrapping up of data into a single unit
+# actual hiding of data is done , but in abstraction we are only finding out which data to be hidden from the user.
+
+
+
+
+# ❗POLYMORPHISM❗
+
+# means many forms 
+
+print(1+2)  #add
+print("1"+"2") #concat
 
 
 
